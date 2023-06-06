@@ -1,0 +1,358 @@
+## EXERCÍCIO 1
+
+#Código de exemplo 1
+
+idade = 18
+if idade > 18:
+  print("Você tem idade para dirigir")
+
+#Resposta: Neste código a variavel 'idade' recebe o valor '18' e após isso é utilizada uma estrutura condicional,'if', para validar se o valor da variável é maior que 18. Nesse caso será verdadeiro, e imprimirá o texto 'Você tem idade para dirigir'.
+
+#Código de exemplo 2
+
+num1 = 1337
+ 
+if num1 == 10:
+  print("Este texto é impresso porque a condição era verdadeira")
+else:
+  print("Este texto é impresso porque a condição era falsa")
+
+#Resposta: Neste código a variavel 'num1' recebe o valor '1337' e após isso é utilizada uma estrutura condicional,'if' e 'else', para validar se o valor da variável é igual a 10, nesse caso será falso e imprimirá o texto 'Este texto é impresso porque a condição era falsa'.
+
+#Código de exemplo 3
+
+numero = 5
+print("Eu pensei em um número entre 1 e 10")
+palpite = int(input("Você consegue adivinhar qual é?"))
+ 
+if palpite == numero:
+  print("Correto!")
+if palpite < numero:
+  print("Baixo Demais!")
+if palpite > numero:
+  print("Alto Demais!")
+
+#Resposta: Neste código o usuário insere o número entre 1 e 10 que ele acredita que seja o ceto, após inserido, esse número é atribuido a variavel 'palpite' que passará pela estrutura condicional e suas ramificações para que seja selecionada a resposta correta. Caso o palpite seja igual a variável 'numero', imprime 'Correto!', caso essa consição seja falsa passa para próxima que caso seja menor imprimirá 'Baixo Demais!', caso esta seja falsa irá para terceira que se for maior imprimirá 'Alto Demais!'.
+
+#------------------------------------------------------------------------------------
+
+## EXERCÍCIO 2
+
+# Código de Exemplo
+ 
+numero = 5
+print("Eu pensei em um número entre 1 e 10")
+palpite = int(input("Você consegue adivinhar qual é?"))
+ 
+if palpite == numero:
+  print("Correto!")
+if palpite < numero:
+  print("Baixo Demais!")
+if palpite > numero:
+  print("Alto Demais!")
+ 
+# O que acontece se você der o palpite '2'?
+  # Resposta: Será printado na tela o texto 'Baixo Demais!'
+ 
+# O que acontece se você der o palpite '6'?
+  # Resposta: Será printado na tela o texto 'Alto Demais!'
+ 
+# O que acontece se você der o palpite '5'?
+  # Resposta: Será printado na tela o texto 'Correto!'
+ 
+# O que acontece se você der o palpite '-5'?
+  # Resposta: Será printado na tela o texto 'Baixo Demais!'
+ 
+# O que acontece se você der o palpite '0'?
+  # Resposta: Será printado na tela o texto 'Baixo Demais!'
+ 
+# O que os símbolos '<' e '>' significam nas linhas 9 e 11?
+  # Resposta: O símbolo '<' significa menor o 'numero' que, e o '>' maior que o 'numero'.
+ 
+# O que acontece se você mudar a linha 5 para if palpite = numero: ?
+  # Resposta: Dará um erro porque o símbolo '=' é utilizado para atribuir valor e não compararação.
+ 
+# O que você percebe sobre cada linha IMEDIATAMENTE ABAIXO de cada comando IF?
+  # Resposta: A utilização da função print para mostrar dados para o usuário através do console.
+
+#------------------------------------------------------------------------------------
+
+## EXERCÍCIO 3
+ 
+# Código Inicial
+ 
+numero = 5
+print("Eu pensei em um número entre 1 e 10")
+palpite = int(input("Você consegue adivinhar qual é?"))
+
+#Adicionei um if para verificar se o palpite é igual ao numero e caso seja verdade imprime a mensagem 'Muito bem'.
+if palpite == numero:
+  print("Muito bem!")
+#Adicionei mais duas funções print que caso o número seja diferente tanto pra mais quanto pra menos, imprime 'Deixa pra lá' e 'Azar'
+if palpite < numero:
+  print("Baixo Demais!")
+  print("Deixa pra lá")
+  print("Azar")
+if palpite > numero:
+  print("Alto Demais!")
+  print("Deixa pra lá")
+  print("Azar")
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 4
+
+#Função para avaliar a porcentagem
+def Avaliador(porce):
+  #Condicionais para verificar se a porcentagem está dentro dos limites
+  if porce > 100:
+    return "Porcentagem inválida, alta demais!"
+  elif porce < 0:
+    return "Porcentagem inválida, baixa demais!"
+  else:
+    #Condicionais para verificar se o aluno foi aprovado ou terá que refazer
+    if porce < 60:
+      return "O aluno não passou, necessário refazer \nConceito: ND"
+    else:
+      #Condicionais para dizer qual o conceito final de um aluno que foi aprovado
+      if 60 <= porce <= 89:
+        return "O aluno passou \nConceito: D"
+      elif 90 <= porce <= 99:
+        return "O aluno passou \nConceito: DL"
+      else:
+        return "O aluno passou \nConceito: DML"
+  
+#Atribuição do valor inserido pelo usuário na variável 'porcentagem'
+porcentagem = int(input("insira o percentual de exercícios ralizados entre 0 e 100:"))
+#Chamada da função 'Avaliador' recebendo a variável 'porcentagem'
+print(Avaliador(porcentagem))
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 5
+
+M = int(input("M: "))
+I = int(input("I: "))
+L = int(input("L: "))
+
+primeira = M+I
+segunda = primeira+I
+terceira = segunda+I
+
+if primeira >= L:
+  print(primeira)
+elif segunda >= L:
+  print(segunda)
+elif terceira >= L:
+  print(terceira)
+else:
+  print("Quem sabe...")
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 6
+
+C = int(input("Temperatura em °C: "))
+
+P = 5*C - 400
+
+def Nivel_Mar(P):
+  if P == 100:
+    return 0
+  elif P < 100:
+    return 1
+  elif P > 100:
+    return -1
+
+nvlMar = Nivel_Mar(P)
+print(f"Pressão atmosférica medida em kPa: {P}\nNivel do mar: {nvlMar}")
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 7
+
+antenas = int(input("Numero de antenas: "))
+olhos = int(input("Numero de olhos: "))
+
+if antenas >= 3 and olhos <= 4:
+  print("Marciano")
+if antenas <= 6 and olhos >= 2:
+  print("Saturiano")
+if antenas <= 2 and olhos <= 3:
+  print("Mecuriano")
+else:
+  print("")
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 8
+
+def Verificar_DDD(DDD):
+  if DDD == 11:
+    return "São Paulo"
+  elif DDD == 19:
+    return "Campinas"
+  elif DDD == 21:
+    return "Rio de Janeiro" 
+  elif DDD == 27:
+    return "Vitória"
+  elif DDD == 31:
+    return "Belo Horizonte" 
+  elif DDD == 32:
+    return "Juiz de Fora" 
+  elif DDD == 61:
+    return "Brasília"
+  elif DDD == 71:
+    return "Salvador" 
+  else:
+    return "DDD não cadastrado"
+
+DDD = int(input("Insira o DDD: "))
+print(Verificar_DDD(DDD))
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 9 
+
+numeros1 = [7,-5,6,-3.4,4.6,12]
+numeros2 = [7,-5,-6,-3.4,-4.6,0]
+
+def positivos(numeros):
+  positivos = []
+  for num in numeros:
+    if num > 0:
+      positivos.append(num)
+  
+  media = sum(positivos) / len(positivos)
+  
+  return f"{len(positivos)} valores positivos \nMédia: {media}"
+
+print(positivos(numeros1))
+print(positivos(numeros2))
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 10
+
+numeros = [-5,0,-3,-4,12]
+
+def verificar(numeros):
+  pares = 0
+  impares = 0
+  positivos = 0
+  negativos = 0
+  for num in numeros:
+    if num%2 == 0:
+      pares += 1
+    else:
+      impares += 1
+    if num > 0:
+      positivos += 1
+    elif num < 0 and num != 0:
+      negativos += 1
+  return f"{pares} valores pares\n{impares} valores ímpares\n{positivos} valor positivo\n{negativos} valores negativos"
+
+print(verificar(numeros))
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 11
+
+entrada1 = "Fulano de Tal"
+entrada2 = "Pedro de Alcântara Francisco Antônio João Carlos Xavier de Paula Miguel Rafael Joaquim José Gonzaga Pascoal Cipriano Serafim"
+
+def verificar_tamanho(texto):
+  if len(texto) > 80:
+    return "NÃO"
+  else:
+    return "SIM"
+
+print(verificar_tamanho(entrada1))
+print(verificar_tamanho(entrada2))
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 12
+
+lista = ["4A5","3A3","4f2","2G4","7Z1"]
+
+def result_jogo(jogada):
+  jogada = list(jogada)
+  if int(jogada[0]) == int(jogada[2]):
+    return int(jogada[0]) * int(jogada[2])
+  elif jogada[1].isupper() == True:
+    return int(jogada[0]) - int(jogada[2])
+  else:
+    return int(jogada[0]) + int(jogada[2])
+
+for jogada in lista:
+  print(result_jogo(jogada))
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 13
+
+
+def calcular_perimetro(a,b,c):
+  if a>=b+c or b>=c+a or c>=a+b :
+    area = (a+b)*c/2
+    return f"Área = {area}"
+  else:
+    per = a+b+c
+    return f"Perímetro = {per}"
+    
+print(calcular_perimetro(6,4,2))
+print(calcular_perimetro(6,4,2.1))
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 14
+
+jogo1 = ["Quico", "Chiquinha", 9, 7]
+jogo2 = ["Dani", "Marcus", 10, 3]
+jogo3 = ["Day", "Conrado", 3, 10]
+jogo4 = ["Popis", "Chaves", 2, 7]
+
+def vencedor(jogo):
+  par = jogo[0]
+  impar = jogo[1]
+  jogada_par = jogo[2]
+  jogada_impar = jogo[3]
+  if (jogada_par + jogada_impar)%2 == 0:
+    return par
+  else:
+    return impar
+
+print(vencedor(jogo1))
+print(vencedor(jogo2))
+print(vencedor(jogo3))
+print(vencedor(jogo4))
+
+#-------------------------------------------------------------------------------------
+
+## EXERCÍCIO 15
+
+salarios = [1600.00, 1600.01, 2000.00]
+
+def calcular_reajuste(salario):
+  if salario <= 1600.00:
+    perc = 15
+    valor_reajuste = salario * perc/100
+    valor_final = salario + valor_reajuste
+  elif 1600.01 <= salario <= 2400.00:
+    perc = 12
+    valor_reajuste = salario * perc/100
+    valor_final = salario + valor_reajuste
+  elif 2400.01 <= salario <= 4000.00:
+    perc = 10
+    valor_reajuste = salario * perc/100
+    valor_final = salario + valor_reajuste
+  else:
+    perc = 7
+    valor_reajuste = salario * perc/100
+    valor_final = salario + valor_reajuste
+    
+  return f"Novo salário: R${round(valor_final,2)}\nReajuste ganho: R$ {round(valor_reajuste,2)}\nEm percentual: {perc}%"
+
+for salario in salarios:
+  print(f"{calcular_reajuste(salario)}\n")
